@@ -6,7 +6,7 @@ export const EmployeesList = () => {
   return (
     <ul>
       {ABC.map(item => (
-        <EmployeesItem key={item} header={item}/>
+        <EmployeesItem key={item} header={item} />
       ))}
     </ul>
   );
