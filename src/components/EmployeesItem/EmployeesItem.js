@@ -3,13 +3,16 @@ import {getUsers} from '../../redux/users/operations';
 import {useDispatch, useSelector} from 'react-redux';
 import {getUsersSelector} from '../../redux/users/selectors';
 import {changeUsersChecked} from '../../redux/users/actions';
+import style from './EmployeesItem.module.css';
 
 export const EmployeesItem = ({header}) => {
   const dispatch = useDispatch();
   const users = useSelector(getUsersSelector);
 
   useEffect(() => {
-    dispatch(getUsers());
+    if (users.length === 0) {
+      dispatch(getUsers());
+    }
   }, [dispatch]);
 
   let relevantUsers = [];
@@ -24,26 +27,27 @@ export const EmployeesItem = ({header}) => {
   };
 
   return (
-    <li>
-      <h1>{header}</h1>
+    <li className={style.item}>
+      <h3 className={style.header}>{header}</h3>
       {relevantUsers.length !== 0 ? (
-        <ul>
+        <ul className={style.list}>
           {relevantUsers.map(({id, lastName, firstName, checked}) => (
             <li key={id}>
-              <label>
-                {`${lastName} ${firstName}`}
+              <label className={style.label}>
+                <span>{`${lastName} ${firstName}`}</span>
                 <input
                   id={id}
                   type="checkbox"
                   checked={checked}
                   onChange={handleCheckbox}
+                  className={style.input}
                 />
               </label>
             </li>
           ))}
         </ul>
       ) : (
-        <p>-----</p>
+        <p className={style.note}>-----</p>
       )}
     </li>
   );

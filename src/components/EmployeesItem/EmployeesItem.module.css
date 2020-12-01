@@ -1,0 +1,28 @@
+.item {
+    margin-right: 15px;
+    width: 160px;
+    margin-bottom: 15px;
+}
+
+.list {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+}
+
+.header {
+    margin: 0px;
+    font-size: 18px;
+}
+
+.note {
+    margin: 0px;
+}

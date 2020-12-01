@@ -1,0 +1,18 @@
+.header {
+    margin: 0px;
+    font-size: 18px;
+}
+
+.list {
+    padding-left: 15px;
+    list-style-type: disc;
+}
+
+.item {
+    margin-bottom: 15px;
+}
+
+.usersItem {
+    font-size: 18px;
+    font-weight: bold;
+}

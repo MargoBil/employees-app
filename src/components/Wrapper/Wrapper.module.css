@@ -1,0 +1,21 @@
+body {
+    margin: 0px;
+    background-color: #fafafa;
+}
+html {
+    box-sizing: border-box;
+  }
+  
+*,
+*::before *::after {
+  box-sizing: inherit;
+}
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 1190px;
+    margin: 0 auto;
+}
+
